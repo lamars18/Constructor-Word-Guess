@@ -54,7 +54,7 @@ var lettersAlreadyGuessedListArray = [];
 var slotsFilledIn = 0;
 
 //GAME LOGIC
-//When user enters game, convert "Constructor Word Guess" text characters to drawings using figlet npm package.
+//When user enters game, convert "Hangman Game" text characters to drawings using figlet npm package.
 figlet("Constructor Word Guess", function(err, data) {
     if (err) {
         console.log('Something went wrong...');
@@ -64,19 +64,19 @@ figlet("Constructor Word Guess", function(err, data) {
     console.log(data)
     //Welcome screen text.
     console.log(gameTextColor("Welcome to the Contructor Word Guess Game!"));
-    console.log(gameTextColor("The Game Theme is... Coding."));
+    console.log(gameTextColor("Theme is... Coding."));
     //Game instructions.
     var howToPlay = 
     "==========================================================================================================" + "\r\n" +
     "How to play" + "\r\n" +
     "==========================================================================================================" + "\r\n" +
     "When prompted to enter a letter, press any letter (A-Z) on the keyboard to guess a letter." + "\r\n" +
-    "Continue guessing letters. When you guess a letter, your guess will either be indicated as correct or incorrect." + "\r\n" +
+    "Keep guessing letters. When you guess a letter, your choice is either correct or incorrect." + "\r\n" +
     "If incorrect, the letter you guessed does not appear in the word." + "\r\n" + 
-    "For every incorrect guess, the number of guesses remaining will decrease by 1." + "\r\n" +
-    "If correct, the letter you guessed does appear in the word." + "\r\n" +
-    "If you correctly guess all the letters in the word before the number of guesses remaining reaches 0, YOU WIN!" + "\r\n" +
-    "If you run out of guesses before the entire word is revealed, you lose. GAME OVER." + "\r\n" +
+    "For every incorrect guess, the number of guesses remaining decrease by 1." + "\r\n" +
+    "If correct, the letter you guessed appears in the word." + "\r\n" +
+    "If you correctly guess all the letters in the word before the number of guesses remaining reaches 0, you win." + "\r\n" +
+    "If you run out of guesses before the entire word is revealed, you lose. Game over." + "\r\n" +
     "===========================================================================================================" + "\r\n" +
     "You can exit the game at any time by pressing Ctrl + C on your keyboard." + "\r\n" +
     "===========================================================================================================" 
@@ -91,12 +91,12 @@ function confirmStart() {
 	 {
 	 	type: 'text',
 	 	name: 'playerName',
-	 	message: 'Player 2: What is your name?'
+	 	message: 'What is your name?'
 	 },
 	 {
 	    type: 'confirm',
 	    name: 'readyToPlay',
-	    message: 'Are you ready to play Word Guess?',
+	    message: 'Are you ready to play?',
 	    default: true
 	  }
 	];
@@ -293,7 +293,7 @@ function playAgain() {
 
 		else {
 			//If user doesn't want to play again, exit game.
-			console.log(gameTextColor("Good bye! Please play again soon."));
+			console.log(gameTextColor("Good bye! Come back soon."));
 			return;
 		}
 	});
